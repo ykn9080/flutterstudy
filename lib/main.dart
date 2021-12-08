@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
-        title: Text('my first app123'),
+        title: Text('my first app'),
         centerTitle: true,
-        backgroundColor: Colors.red[600],
       ),
       body: Center(
-        child: Text('hello ninja12345'),
-      ),
+          child: IconButton(
+        onPressed: () {
+          print('you clicked');
+        },
+        icon: Icon(Icons.alternate_email),
+        color: Colors.amber,
+      )),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Text('click'),
-        backgroundColor: Colors.red[500],
       ),
-    )));
+    ));
+  }
+}
